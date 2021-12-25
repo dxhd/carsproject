@@ -1,0 +1,643 @@
+/* fonts */
+
+@font-face {
+    font-family: Sunflower; /* Гарнитура шрифта */
+    src: url(../fonts/sunflower-light.ttf); /* Путь к файлу со шрифтом */
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+/*
+    min-height: 100%;
+    min-width: 100%;
+*/
+    color: #FFB800;
+    font-family: Sunflower;
+    font-style: normal;
+    text-align: center;
+    background-color: black;
+    margin: 0;
+    
+}
+body::-webkit-scrollbar {
+  width: 0px;               /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #FFB800;        /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #333;    /* цвет плашки */
+  border-radius: 5px;       /* закругления плашки */
+  border: 0px solid;  /* padding вокруг плашки */
+}
+
+
+/* Header */
+
+header { 
+    position: absolute;
+    height: auto;
+    width: 98%;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    
+    text-align: right;
+}
+
+/* Content */
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    margin-top: 10px;
+}
+
+/* Footer */
+
+footer {
+    position: absolute;
+    top: 950px;
+    left: 115px;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: left;
+    color: #7F7F7F;
+    margin: 0px 0px;
+    padding: 0px;
+}
+
+footer::before {
+    display: block;
+    content: '';
+    border-bottom: 2px solid #7F7F7F;
+    height: 0px;
+    width: 570px;
+    margin: 0px 0px;
+    padding: 0px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* Navigation */
+
+ul.nav{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+.nav li { 
+    display: inline;
+}
+
+/*buttons*/
+
+.button {   
+    font-size: 34px;
+    font-weight: 300;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid #FFB800;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 15px;
+    width: 200px;
+    height: 40px;
+    padding-bottom: 20px;
+    margin-left: 36px;
+    vertical-align: middle;
+}
+
+.button:hover{
+    background-color: #333;
+}
+
+/*Autorization*/
+
+#login{
+    border: 0px;
+    border-radius: 100px;
+    height: 60px;
+    width: 80px;
+    margin-bottom: 0px;
+    margin-right: 75px;
+    text-align: center;
+}
+
+#autorization-header {
+    color: #7F7F7F;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 40px;
+    text-align: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0px 0px 35px 0px;
+/*
+    margin-left: 10%;
+    margin-right: 10%;
+    display: inline-block;
+*/
+}
+
+#autorization-header li{
+    display: inline-block; 
+    width: 45%;
+}
+
+#autorization-header li:hover {
+    display: inline-block; 
+    width: 45%;
+    cursor: default;
+    color: rgba(200, 200, 200, 1);
+}
+
+#autorization-login {
+border-bottom: 4px solid #7F7F7F;
+}
+#autorization-register {
+border-bottom: 2px solid #7F7F7F;
+}
+
+
+{box-sizing: border-box;}
+
+/* Всплывающая форма-скрыта по умолчанию */
+.form-popup {
+    align-self: center;
+    display: none;
+    position: fixed;
+    width: 20%;
+    height: auto;
+    min-height: 53%; 
+    left: 40%;
+    top: 15%;
+    z-index: 9;
+    
+}
+
+/* Добавить стили для контейнера формы */
+.form-container {    
+    border-radius: 30px;
+/*    max-width: 300px;*/
+    padding: 10px;
+    background: rgba(69, 69, 69, 0.99);
+    width: 100%;
+    height: 100%;
+    text-align: left; 
+}
+
+.form-container label{
+    font-family: Sunflower;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 32px;
+    margin: 10px 30px;
+}
+
+/* Поля ввода полной ширины */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 50%;
+    padding: 5px 15px;
+    margin: 5px 0px 22px 17px;
+    border: none;
+    background: rgba(69, 69, 69, 0.99);
+    color: #FFB800;
+    font-family: Sunflower;
+    font-style: normal;
+    font-size: 20px;
+    border: 3px solid #FFB800;
+    border-radius: 7px;
+}
+
+/* Когда входы получают фокус, сделайте что-нибудь */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: rgba(69, 69, 69, 0.99);
+  outline: none;
+}
+
+/* Установите стиль для кнопки отправить/войти */
+.form-container .btn {
+    background-color: rgba(69, 69, 69, 0.99);
+    color:#FFB800;
+    font-family: Sunflower;
+    font-style: normal;
+    font-size: 26px;
+    text-decoration: none;
+    text-align: center;
+    border: 3px solid #FFB800;
+    border-radius: 15px;
+    padding: 16px 20px;
+    cursor: pointer;
+    width: 50%;
+    margin: 30px 25% 10px 25%;
+    opacity: 0.8;
+    overflow: hidden;
+}
+
+/* Добавить стиль для кнопки "Отмена" */
+#btn-cancel {
+    background-color: rgba(50, 50, 50, 0);
+    font-style: normal;
+    font-size: 16px;
+    color: #FFB800;
+    border: none;
+    display: none;
+    position: fixed;
+    left: 60%;
+    top: 14%;
+    
+    z-index: 10;
+    opacity: 0.8;
+}
+
+#btn-cancel:hover { opacity: 1;}
+
+/* Добавить некоторые эффекты наведения на кнопки */
+.form-container .btn:hover, .open-button:hover {           
+    opacity: 1;
+    background-color: rgba(50, 50, 50, 0.99);
+}
+
+/* Logo */
+
+#logo, #logo:active, #logo:checked, #logo:hover {
+   text-decoration: none;
+    margin: 5px, 5px; 
+    float: left;
+}
+
+/* Header 1*/
+
+h1 {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 80px;
+/*    left: 780px;*/
+}
+
+/* background */
+
+ body.bg-img {
+/*  background-image: url(../images/background1.png);  Путь к картинке  */  
+     width: 100%;
+     height: 100%;
+/*     background-size: cover;  Растягиваем картинку  по ширине */
+     background-repeat: no-repeat; 
+/*     background-position: center center;*/
+/*     background-attachment: fixed;*/
+     /* Картинка фона без повторения */
+  /*background-position: center; /* Позиция фона по центру */
+}   
+
+/* frosted glass */
+
+.glass {
+    mix-blend-mode: normal;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* links */
+ 
+a:active,
+a:checked,
+a{  
+    text-decoration: none;  
+    color: #FFB800;
+}
+
+
+
+/* Garage */
+
+/* Garage table */
+
+.garage {
+    width: 100%;
+    border-spacing: 63px 0px;
+    text-align: center;
+}
+
+.garage tr td {
+    overflow: hidden;
+    height: 100%;
+    width: 16.7%;
+    background-color: rgba(137, 99, 0, 0.5);
+    border-radius: 20px;
+    
+    /* время анимации */
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+     -webkit-transition: all 0.25s ease-out;
+     transition: all 0.25s ease-out;
+}
+
+/* увеличение при наведении*/
+
+.garage tr td:hover {
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.garage tr td img {
+    width: 89%;
+    height: 172px;
+    margin: 19px 6% 0px;
+}
+
+.garage tr td p.car-brand {
+    text-align: center;
+    margin-left: auto;
+}
+
+.garage tr td p
+{
+    margin: 3px;
+    margin-left: 16px;
+    text-align: left;
+}
+
+/* не работает */
+/*
+.garage tr td img::after{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+}
+*/
+
+/* Garage header */
+
+h1::after {
+    width: 90%;
+    display: block;
+    content: '';
+    border-bottom: 2px solid #FFB800;
+    height: 0px;
+    margin: 20px 5% 0px;
+    padding: 0px;
+}
+
+/*Welcome-text on main page*/
+
+#welcome-text {
+    position: absolute;
+    left: 140px;
+    top: 150px;
+    width: 660px;
+    height: 260px;
+    font-style: normal;
+    font-weight: 750;
+    font-size: 46px;
+    line-height: 60px;
+}
+#welcome-text a {
+    margin-top: 35px;
+    font-size: 46px;
+    width: 310px;
+    height: 56px;
+    padding: 8px;
+}
+
+/* adding car table */
+
+.adding {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+
+.adding-table {
+    width: 100%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.adding-table tr {
+    text-align: center;
+}
+
+.adding-table tr td {
+    border-right: 2px solid #7F7F7F;
+    width: 14%;
+    vertical-align: top;
+}
+
+.adding-table h2 {
+    font-weight: 500;
+    line-height: 52px;
+    font-size: 32px;
+    margin: 0 auto 10%;
+}
+
+.adding-table tr td div {
+/*    text-align: left;*/
+}
+
+.adding-table td:last-child {
+    border-right: none;
+}
+
+/* CarType radio */
+
+.form_radio_group {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.form_radio_group input[type=radio] {
+	display: none;
+}
+
+.form_radio_group-item {
+    margin-bottom: 10%;
+    font-size: 26px;
+    text-align: left;
+}
+
+.form_radio_group label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px 15px;
+	line-height: 34px;
+    border: 3px solid #FFB800;
+    box-sizing: border-box;
+    border-radius: 15px;
+	user-select: none;
+}
+
+/* Checked */
+.form_radio_group input[type=radio]:checked + label {
+	background-color: rgba(50, 50, 50, 0.99);
+}
+ 
+/* Hover */
+.form_radio_group label:hover {
+	background-color: rgba(69, 69, 69, 0.99);
+}
+
+
+
+/* select */
+
+.adding select, .adding select:focus {
+    overflow: hidden;
+    color: #FFB800;
+    background-color: rgba(50, 50, 50, 0); 
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 34px;
+    padding: 6px 15px;
+    border: 3px solid #FFB800;
+    box-sizing: border-box;
+    border-radius: 7px;
+    outline: none;
+/*    margin-left: 10%;*/
+}
+
+.adding select:hover {
+    background-color: rgba(69, 69, 69, 0.99);
+}
+
+.adding select option {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+.adding select option:focus {
+    background-color: #7F7F7F;
+}
+
+.adding #manufacturer {
+    width: 80%;
+}
+
+.adding #choosing-engine-options{
+    text-align: left;
+    margin-left: 10%;
+}
+
+.adding #choosing-engine-options *{
+    margin-bottom: 5%;
+}
+
+.adding #choosing-engine-options label {
+    font-size: 24px;
+    margin: 10%, auto;
+    display: block;
+}
+ 
+.adding #choosing-engine-options input[type=number],
+.adding #choosing-engine-options input[type=number]:focus {
+    overflow: hidden;
+    color: #FFB800;
+    background-color: rgba(50, 50, 50, 0);
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 34px;
+    padding: 6px 15px;
+    border: 3px solid #FFB800;
+    box-sizing: border-box;
+    border-radius: 7px;
+    width: 60%;
+    outline: none;
+}
+
+/* Для Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* Для Firefox */
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+#submit-adding {
+    vertical-align: middle;
+}
+
+#submit-adding input[type=submit] {
+    overflow: hidden;
+    color: #FFB800;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    width: 60%;
+    padding: 2px 15px;
+    background-color: rgba(69, 69, 69, 0);
+    margin: 0;
+    padding: 5px;
+    height: auto;
+}
+
+#submit-adding input[type=submit]:hover {
+    background-color: rgba(69, 69, 69, 0.99);
+}
+
+/* Disabled */
+.form_radio_group input[type=radio]:disabled + label {
+	color: maroon;
+    border-color: maroon;
+}
+
+.adding select:disabled {
+	color: maroon;
+    border-color: maroon;
+}
+
+/*
+.adding #choosing-engine-options input[type=number]:disabled {
+    color: maroon;
+    border-color: maroon;
+}
+*/
+
+.adding #choosing-engine-options input[type=number]:disabled {
+    color: maroon;
+    border-color: maroon;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
